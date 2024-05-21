@@ -18,6 +18,12 @@ public class ReservaController {
 
     @GetMapping
     public ResponseEntity<List<Reserva>> getAllReservas(){
-
+        return ResponseEntity.ok(reservaService.findAll());
     }
+
+    public ResponseEntity<Void> createReserva(Reserva reserva){
+        reservaService.crearReserva(reserva);
+        return ResponseEntity.noContent().build();
+    }
+
 }
