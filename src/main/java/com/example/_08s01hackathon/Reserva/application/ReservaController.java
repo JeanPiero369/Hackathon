@@ -4,9 +4,7 @@ import com.example._08s01hackathon.Reserva.domain.Reserva;
 import com.example._08s01hackathon.Reserva.domain.ReservaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,10 +18,20 @@ public class ReservaController {
     public ResponseEntity<List<Reserva>> getAllReservas(){
         return ResponseEntity.ok(reservaService.findAll());
     }
-
+    @PostMapping
     public ResponseEntity<Void> createReserva(Reserva reserva){
         reservaService.crearReserva(reserva);
         return ResponseEntity.noContent().build();
     }
 
+    @PutMapping("{reservaId}")
+    public ResponseEntity<Reserva> updateReserva(@PathVariable("reservaId") Long id, @RequestBody Reserva reserva){
+        return ResponseEntity.ok(reservaService.updateReserva(id, reserva));
+    }
+
+    @DeleteMapping
+    public ResponseEntity<Void> deleteReserva(@PathVariable("reservaId") Long id){
+        reservaService.deleteReserva(id);
+        return ResponseEntity.noContent().build();
+    }
 }
