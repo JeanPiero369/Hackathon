@@ -18,18 +18,19 @@ public class ReservaController {
     public ResponseEntity<List<Reserva>> getAllReservas(){
         return ResponseEntity.ok(reservaService.findAll());
     }
+
     @PostMapping
-    public ResponseEntity<Void> createReserva(Reserva reserva){
+    public ResponseEntity<Void> createReserva(@RequestBody Reserva reserva){
         reservaService.crearReserva(reserva);
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping("{reservaId}")
+    @PutMapping("/{reservaId}")
     public ResponseEntity<Reserva> updateReserva(@PathVariable("reservaId") Long id, @RequestBody Reserva reserva){
         return ResponseEntity.ok(reservaService.updateReserva(id, reserva));
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{reservaId}")
     public ResponseEntity<Void> deleteReserva(@PathVariable("reservaId") Long id){
         reservaService.deleteReserva(id);
         return ResponseEntity.noContent().build();
