@@ -2,7 +2,7 @@ package com.example._08s01hackathon.Reserva.domain;
 
 import com.example._08s01hackathon.Reserva.infrastructure.ReservaRepository;
 import com.example._08s01hackathon.Usuario.domain.Usuario;
-import com.example._08s01hackathon.Usuario.infrastructure.UsuarioRepository;
+import com.example._08s01hackathon.Usuario.infraestructure.UsuarioRepository;
 import com.example._08s01hackathon.exceptions.NotFoundException;
 import com.example._08s01hackathon.exceptions.UniqueConstraintException;
 import org.springframework.beans.factory.annotation.Autowired;

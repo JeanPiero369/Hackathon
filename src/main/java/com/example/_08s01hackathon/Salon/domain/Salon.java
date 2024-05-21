@@ -35,4 +35,6 @@ public class Salon {
 
     @ManyToMany(mappedBy = "salones")
     private List<Etiqueta> etiquetas=new ArrayList<>();
+
+
 }
