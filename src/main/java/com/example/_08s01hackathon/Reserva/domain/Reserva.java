@@ -1,5 +1,6 @@
-package com.example._08s01hackathon.Reserva;
+package com.example._08s01hackathon.Reserva.domain;
 
+import com.example._08s01hackathon.Usuario.domain.Usuario;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

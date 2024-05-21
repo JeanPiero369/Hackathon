@@ -1,6 +1,7 @@
 package com.example._08s01hackathon.Usuario.domain;
 
 
+import com.example._08s01hackathon.Reserva.domain.Reserva;
 import jakarta.persistence.*;
 import lombok.Data;
 
