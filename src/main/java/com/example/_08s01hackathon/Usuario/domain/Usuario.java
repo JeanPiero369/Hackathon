@@ -5,6 +5,7 @@ import com.example._08s01hackathon.Reserva.domain.Reserva;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -12,7 +13,7 @@ import java.util.List;
 public class Usuario {
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
-    int idUsuario;
+    Long idUsuario;
 
     @Column
     String nombre;
@@ -24,5 +25,5 @@ public class Usuario {
     String telefono;
 
     @OneToMany(mappedBy = "usuario")
-    List<Reserva> reservas=new List<>();
+    List<Reserva> reservas=new ArrayList<>();
 }
